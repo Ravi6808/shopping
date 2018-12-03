@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<style>
+  .product_details{
+    margin: 1rem;
+  }
+</style>
+<script>
+    $(document).ready(function(){
+        //var counter = $('#TextBox').val();
+        $('#AddButton').click( function() {
+            var counter = $('#TextBox').val();
+            counter++ ;
+            $('#TextBox').val(counter);
+            var price = $('#price').text();
+            var tot_amount = counter * price;
+            $('#amount').text(tot_amount);     
+        });
+        $('#MinusButton').click( function() {
+            var counter = $('#TextBox').val();
+            counter-- ;
+            $('#TextBox').val(counter);
+            var price = $('#price').text();
+            var tot_amount = counter * price;
+            $('#amount').text(tot_amount);     
+        });
+    });
+    </script>
+    </head>
+
+<body ng-app="">
+  <div ng-app="myApp" ng-controller="myCtrl" >
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>                        
+            </button>
+            <a class="navbar-brand" href="#">WebSiteName</a>
+          </div>
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Page 1-1</a></li>
+                  <li><a href="#">Page 1-2</a></li>
+                  <li><a href="#">Page 1-3</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Page 2</a></li>
+              <li><a href="#">Page 3</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+              <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+              <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Cart<span class="badge">0</span></a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    <div class="container">
+        <div class="row">
+          <div class="col-sm-6" style="background-color:lavender;">
+            <div class="product_image">
+              <img class="img-responsive" src="a1.jpg" alt="shirt" width="395"  />
+            </div>
+          </div>
+          <div class="col-sm-6" style="background-color:lavenderblush;">
+            <div class="product_details">
+                <form>
+                    <div class="form-group">
+                      <label for="usr"> Product Name:</label>
+                      <!-- <input type="text" class="form-control" id="usr"> -->
+                      <br/>
+                      <label style="color:brown;" >Raymond Shirt </label>
+                    </div>
+                    <div class="form-group">
+                      <label for="pwd">Description:</label>
+                      <br/>
+                      <label style="color:brown;" >
+                          Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                      </label>
+                    </div>
+                    <div class="form-group">
+                        <label for="pwd">Price:</label>
+                        <br/>
+                        <label style="color:brown;" id="price" ><i class="fa fa-rupee"></i>  1200</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="pwd">Quantity:</label>
+                        <br/>
+                        <div class="">
+                            <input type="Button" id='AddButton' value="+" />
+                            <input type="text" name="TextBox" id="TextBox" value="1" />
+                            <!-- <input type="text" value="1" id="quantity" style="width:50px;" /> -->
+                            <input type="Button" id='MinusButton' value="-" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label style="font-size: 17px;" for="pwd">Total:</label>
+                        <label style="color:brown;font-size: 18px;" id="amount" > <i class="fa fa-rupee"></i> 1200</label>
+                    </div>
+                    <div >
+                        <a href="cartpage.html">
+                            <button class="btn btn-sm btn-success"  id="cart_btn" >Buy</button>
+                            
+                          </a>
+                        </div>
+                  </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+<!-- <script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', function($scope) {
+     
+          $scope.myWelcome = 1200;
+    });
+    </script> -->
+</html>
